@@ -20,7 +20,7 @@
 /* --Initial styling-- */
 body
 {
-    background: black;
+    background: #060025;
     overflow-x: hidden;
 }
 main
@@ -59,12 +59,14 @@ li img:hover
 }
 
 /* --Header-- */
-header
+header img
 {
-    height: 240px;
-    width: auto;
-    background-image: url(../images/starbreak-banner.png);
-    background-size: cover;
+    width: 100%;
+    height: auto;
+    display: block;
+    align-content: center;
+    min-width: 900px;
+    overflow-x: hidden;
 }
 
 /* --Navbar-- */
@@ -87,10 +89,11 @@ nav a
     color: #51FFE0;
     font-family: 'Orbitron Medium', Helvetica, sans-serif;
     display: block;
-    margin: 38px;
-    font-size: 250%;
+    margin: 24px;
+    margin-top: 42px;
+    font-size: 200%;
     text-decoration: none;
-}
+}   
 nav ul
 {
     margin-left: 20%;
@@ -103,9 +106,9 @@ nav li
 {
     margin-top: -24px;
 }
-#navicon
+#nav-icon
 {
-    width: 65%;
+    width: 59%;
     margin-top: -12px;
 }
 
@@ -225,9 +228,12 @@ p
 {
     width: 70.4%;
     margin: auto;
+    /* padding-top: 56.25%; */
+    /* overflow: hidden; */
     position: relative;
     left: 15%;
     bottom: 420px;
+    /* bottom: 890px; */
     z-index: 98;
 }
 
@@ -237,28 +243,29 @@ p
     height: 150px;
     width: 75%;
     margin: auto;
-    display: block;
     background-image: linear-gradient(#0B0061, #2400B0);
     background-clip: border-box;
+    display: flex;
+    justify-content: center;
     overflow-x: hidden;
 }
 #listen-on h2
 {
     float: left;
     position: relative;
-    left: 120px;
+    left: 160px;
     top: 42px;
 }
 #listen-on ul
 {
     float: left;
     position: relative;
-    left: 120px;
+    left: 180px;
     top: 12px;
 }
 #listen-on li
 {
-    margin: 0px 10px 0px 10px;
+    margin-top: 10px;
 }
 #listen-on section
 {
@@ -266,6 +273,10 @@ p
     height: 95%;
     margin: auto;
     min-width: 1000px;
+}
+#listen-on img
+{
+    width: 80%;
 }
 
 /* --Shop section-- */
@@ -328,8 +339,9 @@ p
 }
 #discord p
 {
-    margin-left: 5%;
+    margin-left: 2%;
     min-width: 1000px;
+    display: block;
 }
 #discord a
 {
@@ -348,11 +360,7 @@ p
 }
 #discord img
 {
-    margin: 10px;
-    margin-right: 2%;
-    position: relative;
-    left: 76%;
-    bottom: 214px;
+    visibility: hidden;
 }
 
     /* - - - - ABOUT PAGE STYLING - - - - */
@@ -486,12 +494,13 @@ footer
 {
     background-color: #060025;
     margin: auto;
-    min-width: 1050px;
+    min-width: 800px;
+    display: block;
 }
 footer p
 {
-    font-size: medium;
     text-align: center;
+    font-size: medium;
 }
 footer li
 {
@@ -526,4 +535,68 @@ footer a
     margin-left: auto;
     margin-right: auto;
     height: auto;
+}
+
+@media screen and (min-width: 1000px)
+{
+    header
+    {
+        min-width: 1100px;
+        min-height: 200px;
+    }
+    nav a
+    {
+        color: #51FFE0;
+        font-family: 'Orbitron Medium', Helvetica, sans-serif;
+        display: block;
+        margin: 38px;
+        font-size: 250%;
+        text-decoration: none;
+    } 
+    #nav-icon
+    {
+        width: 65%;
+        margin-top: -12px;
+    }
+
+    #listen-on li
+    {
+        margin: 0px 10px 0px 10px;
+    }
+    #listen-on img
+    {
+        width: 100%;
+    }
+    #listen-on h2
+    {
+        float: left;
+        position: relative;
+        left: 120px;
+        top: 42px;
+    }
+    #listen-on ul
+    {
+        float: left;
+        position: relative;
+        left: 120px;
+        top: 12px;
+    }
+
+    #discord p
+    {
+        margin-left: 5%;
+        min-width: 1000px;
+        display: block;
+    }
+    #discord img
+    {
+        margin: 10px;
+        margin-right: 2%;
+        position: relative;
+        left: 76%;
+        bottom: 214px;
+        display: block;
+        float: left;
+        visibility: visible;
+    }
 }
