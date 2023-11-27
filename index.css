@@ -1,0 +1,732 @@
+@font-face {
+    font-family: 'Orbitron Medium';
+    src: url(fonts/Orbitron-Medium.ttf);
+}
+
+@font-face {
+    font-family: 'Bahnschrift SemiBold';
+    src: url(fonts/bahnschrift.ttf);
+}
+
+
+/* --Reset stylesheet-- */
+*
+{
+    margin: 0px;
+    border: 0px;
+    padding: 0px;
+}
+
+/* --Initial styling-- */
+body
+{
+    background: #060025;
+    overflow-x: hidden;
+}
+main
+{
+    min-width: 900px;
+}
+
+/* #thinner
+{
+    width: 75%;
+    margin: auto;
+}  /* Gives pages thinner main content area to exclude side images; used on every main page besides index */
+
+/* --Makes links color shift when hovered over-- */
+li a:hover
+{
+    color: #1980FC;
+}
+li img:hover
+{
+    filter: brightness(70%) contrast(165%);
+}
+
+/* --Fun secret stuff-- */
+#secret-1
+{
+    position: relative;
+    top: 372px;
+    left: 45px;
+    opacity: 0;
+    /* ^^ Set opacity to 1 to see link */
+}
+#secret-1 img
+{
+    width: 15px;
+}
+
+/* --Header-- */
+header img
+{
+    width: 100%;
+    height: auto;
+    display: block;
+    align-content: center;
+    min-width: 900px;
+    overflow-x: hidden;
+}
+
+/* --Navbar-- */
+nav
+{
+    height: 80px;
+    width: 100%;
+    min-width: 950px;
+    display: block;
+    background-image: linear-gradient(#0B0061, #2400B0);
+    background-clip: border-box;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+nav a
+{
+    color: #51FFE0;
+    font-family: 'Orbitron Medium', Helvetica, sans-serif;
+    display: block;
+    margin: 24px;
+    margin-top: 42px;
+    font-size: 200%;
+    text-decoration: none;
+}   
+nav ul
+{
+    margin-left: 20%;
+    margin-right: -50%;
+    text-align: center;
+    position: relative;
+    right: 205px;
+}
+nav li
+{
+    margin-top: -24px;
+}
+#nav-icon
+{
+    width: 59%;
+    margin-top: -12px;
+}
+
+/* --Side images-- */
+#side-a
+{
+    height: 750px; /*full is 860px*/
+    width: 12.5%; /*full is 170px*/
+    background-image: url(../images/side-image-left.png);
+    background-size: auto;
+    float: left;
+    min-width: 100px;
+}
+#side-b
+{
+    height: 750px;
+    width: 12.5%;
+    background-image: url(../images/side-image-right.png);
+    background-size: auto;
+    float: right;
+    min-width: 100px;
+}
+
+#side-a-long
+{
+    height: 860px; /*full is 860px*/
+    width: 12.5%; /*full is 170px*/
+    background-image: url(../images/side-image-left.png);
+    background-size: auto;
+    float: left;
+    min-width: 100px;
+}
+#side-b-long
+{
+    height: 860px;
+    width: 12.5%;
+    background-image: url(../images/side-image-right.png);
+    background-size: auto;
+    float: right;
+    min-width: 100px;
+}
+
+/* --General list adjustments-- */
+ul
+{
+    list-style-type: none;
+    display: inline-block;
+    margin: auto;
+}
+li
+{
+    float: left;
+
+}
+
+/* --Text colors/fonts-- */
+h1
+{
+    font-size: 40px;
+}
+h2
+{
+    font-size: 30px;
+}
+h3
+{
+    font-size: 24px;
+}
+h1, h2, h3
+{
+    color: #51FFE0;
+    font-family: 'Orbitron Medium', Helvetica, sans-serif;
+    margin-left: 16px;
+    margin-right: 16px;
+    padding-top: 10px;
+}
+p
+{
+    color: #51FFE0;
+    font-family: 'Bahnschrift SemiBold', 'Franklin Gothic Medium', sans-serif;
+    font-size: large;
+    padding: 10px;
+}
+.dark
+{
+    text-shadow: 3px 3px #0B0061;
+}
+.light
+{
+    text-shadow: 3px 3px #1980FC;
+}
+
+/* --Page Title-- */
+#title
+{
+    height: 75px;
+    width: 75%;
+    margin: auto;
+    display: block;
+    background-image: url(../images/title-bg.png);
+    background-size: cover;
+    min-width: 800px;
+}
+#title h1
+{
+    text-align: center;
+    color: #2400B0;
+    font-size: 44px;
+}
+
+    /* - - - - HOME PAGE STYLING - - - - */
+
+/* --"New music" section-- */
+#new-music
+{
+    height: 525px;
+    width: 75%;
+    margin: auto;
+    display: block;
+    background-image: linear-gradient(#51FFE0, #17AF9A);
+    background-clip: border-box;
+    min-width: 800px;
+}
+#new-music img
+{
+    width: 79%;
+    margin: auto;
+    position: relative;
+    top: 20px;
+}
+#vid-embed
+{
+    max-height: 400px;
+}
+#vid-embed iframe
+{
+    width: 70.4%;
+    margin: auto;
+    /* padding-top: 56.25%; */
+    /* overflow: hidden; */
+    position: relative;
+    left: 15%;
+    bottom: 420px;
+    /* bottom: 890px; */
+    z-index: 98;
+}
+
+/* --"Listen on" section-- */
+#listen-on
+{
+    height: 150px;
+    width: 75%;
+    margin: auto;
+    background-image: linear-gradient(#0B0061, #2400B0);
+    background-clip: border-box;
+    display: flex;
+    justify-content: center;
+    overflow-x: hidden;
+}
+#listen-on h2
+{
+    float: left;
+    position: relative;
+    left: 160px;
+    top: 42px;
+}
+#listen-on ul
+{
+    float: left;
+    position: relative;
+    left: 180px;
+    top: 12px;
+}
+#listen-on li
+{
+    margin-top: 10px;
+}
+#listen-on section
+{
+    width: 98%;
+    height: 95%;
+    margin: auto;
+    min-width: 1000px;
+}
+#listen-on img
+{
+    width: 80%;
+}
+
+/* --Shop section-- */
+#shop
+{
+    float: left;
+    height: 450px;
+    width: 37%;
+    display: block;
+    background-image: linear-gradient(#51FFE0, #17AF9A);
+    background-clip: border-box;
+}
+#shop h2
+{
+    text-align: center;
+    color: #1980FC;
+}
+#shop img
+{
+    width: 70%;
+    margin: auto;
+    border-width: 5px;
+    border-color: #0B0061;
+    border-style: solid;
+    border-radius: 10px;
+    position: relative;
+    top: 18px;
+}
+
+/* --Youtube post feed-- */
+#feed
+{
+    float: left;
+    height: 450px;
+    width: 63%;
+    display: block;
+    background-image: linear-gradient(#0B0061, #2400B0);
+    background-clip: border-box;
+    position: relative;
+}
+#feed iframe
+{
+    width: 100%;
+}
+
+/* --Discord section-- */
+#discord
+{
+    float: left;
+    height: 280px;
+    width: 100%;
+    display: block;
+    background-image: linear-gradient(#0B0061, #2400B0);
+    background-clip: border-box;
+    min-width: 800px;
+}
+#discord h2
+{
+    margin-left: 3%;
+}
+#discord p
+{
+    margin-left: 2%;
+    min-width: 1000px;
+    display: block;
+}
+#discord a
+{
+    color: #51FFE0;
+    text-decoration: none;
+    padding: 12px 50px 12px 50px;
+    background-image: linear-gradient(#0B0061, #060025);
+    border-radius: 10px;
+    position: relative;
+    top: 15px;
+    left: 60px;
+}
+#discord a:hover
+{
+    background-image: linear-gradient(#1980FC, #0B0061);
+}
+#discord img
+{
+    visibility: hidden;
+}
+
+    /* - - - - DISCOGRAPHY PAGE STYLING - - - - */
+
+/* --Song list section-- */
+
+#songlist
+{
+    height: min-content;
+    width: 75%;
+    margin: auto;
+    display: block;
+    background-image: linear-gradient(to right, #0B0061, #2400B0, #0B0061);
+    background-clip: border-box;
+}
+#song-sort
+{
+    height: 280px;
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+#song-sort button
+{
+    color: #51FFE0;
+    font-family: 'Orbitron Medium', Helvetica, sans-serif;
+    font-size: 24px;
+    width: 200px;
+    height: 50px;
+    margin: 0px 10px 10px 10px;
+    background-image: linear-gradient(#0B0061, #060025);
+    border-radius: 10px;
+}
+#song-sort button:hover
+{
+    cursor: pointer;
+}
+#grid
+{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    height: min-content;
+    padding-bottom: 60px;
+}
+#grid img /* Album art; images need to be 220px by 220px */
+{
+    margin: 15px;
+    filter: sepia(100%) brightness(75%) hue-rotate(170deg) saturate(320%) contrast(115%);
+}
+#grid img:hover
+{
+    filter: brightness(100%) drop-shadow(0px 0px 5px black);
+}
+.original, .remix, .ost
+{
+    width: 250px;
+    height: 350px;
+    display: block;
+    margin: 20px;
+    background-image: linear-gradient(#51FFE0, #17AF9A);
+    background-clip: border-box;
+    border: #1980FC;
+    border-width: 3px;
+    border-style: solid;
+    border-radius: 4px;
+}
+.hide
+{
+    display: none;
+}
+.info
+{
+    background-color: #060025;
+    width: 250px;
+    height: 97px;
+    
+}
+.info h3
+{
+    position: relative;
+    right: 8px;
+    bottom: 8px;
+    max-height: 30px;
+}
+.info p
+{
+    color: #1980FC;
+    font-family: 'Bahnschrift SemiBold', 'Franklin Gothic Medium', sans-serif;
+    font-size: larger;
+    font-weight: bold;
+    position: relative;
+    right: 4px;
+    top: 18px;
+}
+.info a
+{
+    float: right;
+    margin: 4px;
+    position: relative;
+    bottom: 20px;
+}
+.info a:hover
+{
+    filter: brightness(70%);
+}
+/* 
+Use display: block and display: none to hide and reveal songs to sort list
+
+*/
+
+    /* - - - - ABOUT PAGE STYLING - - - - */
+
+/* --Bio section-- */
+#bio
+{
+    height: 275px;
+    width: 75%;
+    margin: auto;
+    display: block;
+    background-image: linear-gradient(#0B0061, #2400B0);
+    background-clip: border-box;
+}
+
+/* --Feedback section-- */
+#feedback
+{
+    height: 400px;
+    width: 75%;
+    margin: auto;
+    display: block;
+    background-image: linear-gradient(#51FFE0, #17AF9A);
+    background-clip: border-box;
+    min-width: 800px;
+}
+#feedback h2
+{
+    text-align: center;
+    color: #1980FC;
+}
+#feedback form
+{
+    height: 315px;
+    width: 80%;
+    margin: auto;
+    margin-top: 10px;
+    background-image: linear-gradient(#0B0061, #060025);
+    border-radius: 10px;
+}
+#entry-a
+{
+    width: 90%;
+    margin: auto;
+    padding: 20px;
+    display: block;
+    position: relative;
+    left: 12%;
+}
+#entry-b
+{
+    width: 400px;
+    display: block;
+    position: relative;
+    left: 15%;
+    bottom: 10px;
+}
+label
+{
+    color: #51FFE0;
+    font-family: 'Bahnschrift SemiBold', 'Franklin Gothic Medium', sans-serif;
+    font-size: large;
+    padding: 10px;
+}
+#entry-b label
+{
+    text-align: center;
+    margin-left: 19%;
+}
+#entry-a input, textarea
+{
+    color: #0B0061;
+    font-family: 'Bahnschrift SemiBold', 'Franklin Gothic Medium', sans-serif;
+    background-color: #51FFE0;
+    border-color: #17AF9A;
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 5px;
+}
+textarea
+{
+    margin-top: 10px;
+    max-height: 150px;
+    min-height: 150px;
+    max-width: 400px;
+    min-width: 400px;
+    resize: none;
+    position: relative;
+    left: 20%;
+}
+#submit
+{
+    padding: 15px;
+    margin: auto;
+    display: block;
+    color: #51FFE0;
+    font-family: 'Bahnschrift SemiBold', 'Franklin Gothic Medium', sans-serif;
+    font-size: larger;
+    background-image: linear-gradient(#0B0061, #2400B0);
+    background-clip: border-box;
+    border-color: #060025;
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 5px;
+    position: relative;
+    left: 2px;
+}
+#submit:hover
+{
+    filter: brightness(80%) contrast(165%);
+}
+
+/* --Footer-- */
+hr
+{
+    display: block;
+    margin-top: 12px;
+    margin-bottom: 1px;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: solid;
+    border-width: 1px;
+    width: 70%;
+    color: #51FFE0;
+}
+#footer-links
+{
+    text-align: center;
+}
+footer
+{
+    background-color: #060025;
+    margin: auto;
+    min-width: 800px;
+    display: block;
+}
+footer p
+{
+    text-align: center;
+    font-size: medium;
+}
+footer li
+{
+    margin-top: -2%;
+    margin-bottom: -5%;
+}
+footer a
+{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin: 20px;
+    font-size: 30px;
+}
+
+/* --Floating/positioning-- */
+.floatleft
+{
+    float: left;
+    margin: 2%;
+    margin-bottom: 5px;
+}
+.floatright
+{
+    float: right;
+    margin: 2%;
+    margin-bottom: 5px;
+}
+.center
+{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: auto;
+}
+
+@media screen and (min-width: 1000px)
+{
+    header
+    {
+        min-width: 1100px;
+        min-height: 200px;
+    }
+    nav a
+    {
+        color: #51FFE0;
+        font-family: 'Orbitron Medium', Helvetica, sans-serif;
+        display: block;
+        margin: 38px;
+        font-size: 250%;
+        text-decoration: none;
+    } 
+    #nav-icon
+    {
+        width: 65%;
+        margin-top: -12px;
+    }
+
+    #listen-on li
+    {
+        margin: 0px 10px 0px 10px;
+    }
+    #listen-on img
+    {
+        width: 100%;
+    }
+    #listen-on h2
+    {
+        float: left;
+        position: relative;
+        left: 120px;
+        top: 42px;
+    }
+    #listen-on ul
+    {
+        float: left;
+        position: relative;
+        left: 120px;
+        top: 12px;
+    }
+
+    #discord p
+    {
+        margin-left: 5%;
+        min-width: 1000px;
+        display: block;
+    }
+    #discord img
+    {
+        margin: 10px;
+        margin-right: 2%;
+        position: relative;
+        left: 76%;
+        bottom: 214px;
+        display: block;
+        float: left;
+        visibility: visible;
+    }
+}
