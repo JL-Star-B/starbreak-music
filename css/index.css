@@ -132,6 +132,25 @@ nav li
     min-width: 100px;
 }
 
+#side-a-long
+{
+    height: 860px; /*full is 860px*/
+    width: 12.5%; /*full is 170px*/
+    background-image: url(../images/side-image-left.png);
+    background-size: auto;
+    float: left;
+    min-width: 100px;
+}
+#side-b-long
+{
+    height: 860px;
+    width: 12.5%;
+    background-image: url(../images/side-image-right.png);
+    background-size: auto;
+    float: right;
+    min-width: 100px;
+}
+
 /* --General list adjustments-- */
 ul
 {
@@ -362,6 +381,117 @@ p
 {
     visibility: hidden;
 }
+
+    /* - - - - DISCOGRAPHY PAGE STYLING - - - - */
+
+/* --Song list section-- */
+
+#songlist
+{
+    height: min-content;
+    width: 75%;
+    margin: auto;
+    display: block;
+    background-image: linear-gradient(to right, #0B0061, #2400B0, #0B0061);
+    background-clip: border-box;
+}
+#song-sort
+{
+    height: 280px;
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+#song-sort button
+{
+    color: #51FFE0;
+    font-family: 'Orbitron Medium', Helvetica, sans-serif;
+    font-size: 24px;
+    width: 200px;
+    height: 50px;
+    margin: 0px 10px 10px 10px;
+    background-image: linear-gradient(#0B0061, #060025);
+    border-radius: 10px;
+}
+#song-sort button:hover
+{
+    cursor: pointer;
+}
+#grid
+{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    height: min-content;
+    padding-bottom: 60px;
+}
+#grid img /* Album art; images need to be 220px by 220px */
+{
+    margin: 15px;
+    filter: sepia(100%) brightness(75%) hue-rotate(170deg) saturate(320%) contrast(115%);
+}
+#grid img:hover
+{
+    filter: brightness(100%) drop-shadow(0px 0px 5px black);
+}
+.original, .remix, .ost
+{
+    width: 250px;
+    height: 350px;
+    display: block;
+    margin: 20px;
+    background-image: linear-gradient(#51FFE0, #17AF9A);
+    background-clip: border-box;
+    border: #1980FC;
+    border-width: 3px;
+    border-style: solid;
+    border-radius: 4px;
+}
+.hide
+{
+    display: none;
+}
+.info
+{
+    background-color: #060025;
+    width: 250px;
+    height: 97px;
+    
+}
+.info h3
+{
+    position: relative;
+    right: 8px;
+    bottom: 8px;
+    max-height: 30px;
+}
+.info p
+{
+    color: #1980FC;
+    font-family: 'Bahnschrift SemiBold', 'Franklin Gothic Medium', sans-serif;
+    font-size: larger;
+    font-weight: bold;
+    position: relative;
+    right: 4px;
+    top: 18px;
+}
+.info a
+{
+    float: right;
+    margin: 4px;
+    position: relative;
+    bottom: 20px;
+}
+.info a:hover
+{
+    filter: brightness(70%);
+}
+/* 
+Use display: block and display: none to hide and reveal songs to sort list
+
+*/
 
     /* - - - - ABOUT PAGE STYLING - - - - */
 
