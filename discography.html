@@ -11,26 +11,6 @@
 	<link rel="stylesheet" type="text/css" href="css/index.css">
 	<script src="https://kit.fontawesome.com/16cf5f0845.js" crossorigin="anonymous"></script>
 
-	<script>
-		const show_all = document.getElementById("sort-all");
-		const show_og = document.getElementById("sort-original");
-		const show_re = document.getElementById("sort-remix");
-		const show_ost = document.getElementById("sort-ost");
-
-		const original = document.getElementsByClassName("original");
-		const remix = document.getElementsByClassName("remix");
-		const ost = document.getElementsByClassName("ost");
-
-		show_og.addEventListener("click", function () {
-            document.getElementsByClassName("info").classList.add("hide");
-        });
-
-
-    // document.getElementsByClassName('original').style.display = 'block';
-    // document.getElementsByClassName('remix, ost').style.display = 'none';
-
-	</script>
-
 </head>
 <body>
 
@@ -66,17 +46,17 @@
 		<!-- SONG LIST -->
 		<div id="songlist">
 
-			<div id="song-sort">
-				<!-- <button id="sort-all">All Music</button>
-				<button id="sort-original">Originals</button>
-				<button id="sort-remix">Remixes</button>
-				<button id="sort-ost">OSTs</button> -->
+			<div id="button-box">
+				<button class="button current" onclick="filterSongs('all')">All Music</button>
+				<button class="button" onclick="filterSongs('original')">Originals</button>
+				<button class="button" onclick="filterSongs('remix')">Remixes</button>
+				<button class="button" onclick="filterSongs('ost')">OSTs</button>
 			</div>
 
 			<div id="grid">
 
 				<!-- Polarity -->
-				<div class="ost">
+				<div class="songbox ost">
 					<a href="https://www.youtube.com/watch?v=Stana830y2s" target="_blank">
 						<img src="images/song-covers/polarity.png" alt="Polarity album art">
 					</a>
@@ -89,7 +69,7 @@
 				</div>
 
 				<!-- Spacehaven -->
-				<div class="original">
+				<div class="songbox original">
 					<a href="https://www.youtube.com/watch?v=3F_wEZQ32Hg" target="_blank">
 						<img src="images/song-covers/spacehaven.png" alt="Spacehaven album art">
 					</a>
@@ -102,7 +82,7 @@
 				</div>
 
 				<!-- Stardust -->
-				<div class="ost">
+				<div class="songbox ost">
 					<a href="https://www.youtube.com/watch?v=YKY0QCEJZLk" target="_blank">
 						<img src="images/song-covers/void-album.png" alt="Stardust album art">
 					</a>
@@ -115,7 +95,7 @@
 				</div>
 
 				<!-- Security -->
-				<div class="ost">
+				<div class="songbox ost">
 					<a href="https://www.youtube.com/watch?v=_SdzmC9zlnw" target="_blank">
 						<img src="images/song-covers/void-album.png" alt="Security album art">
 					</a>
@@ -128,7 +108,7 @@
 				</div>
 
 				<!-- Singularity -->
-				<div class="ost">
+				<div class="songbox ost">
 					<a href="https://www.youtube.com/watch?v=TqhxdPs45y8" target="_blank">
 						<img src="images/song-covers/void-album.png" alt="Singularity album art">
 					</a>
@@ -141,7 +121,7 @@
 				</div>
 
 				<!-- Gravity -->
-				<div class="ost">
+				<div class="songbox ost">
 					<a href="https://www.youtube.com/watch?v=E2B2vIws2hw" target="_blank">
 						<img src="images/song-covers/void-album.png" alt="Gravity album art">
 					</a>
@@ -154,7 +134,7 @@
 				</div>
 
 				<!-- Ultraviolet -->
-				<div class="ost">
+				<div class="songbox ost">
 					<a href="https://www.youtube.com/watch?v=mr4aojoL7u0" target="_blank">
 						<img src="images/song-covers/void-album.png" alt="Ultraviolet album art">
 					</a>
@@ -167,7 +147,7 @@
 				</div>
 
 				<!-- Event Horizon -->
-				<div class="ost">
+				<div class="songbox ost">
 					<a href="https://www.youtube.com/watch?v=06HfdoZFOlA" target="_blank">
 						<img src="images/song-covers/void-album.png" alt="Event Horizon album art">
 					</a>
@@ -180,7 +160,7 @@
 				</div>
 
 				<!-- Weightless -->
-				<div class="ost">
+				<div class="songbox ost">
 					<a href="https://www.youtube.com/watch?v=GP1y7xXUDo0" target="_blank">
 						<img src="images/song-covers/void-album.png" alt="Weightless album art">
 					</a>
@@ -193,7 +173,7 @@
 				</div>
 
 				<!-- Asteroids -->
-				<div class="ost">
+				<div class="songbox ost">
 					<a href="https://www.youtube.com/watch?v=gzVat2_IKLg" target="_blank">
 						<img src="images/song-covers/void-album.png" alt="Asteroids album art">
 					</a>
@@ -206,7 +186,7 @@
 				</div>
 
 				<!-- Bushwhack -->
-				<div class="remix">
+				<div class="songbox remix">
 					<a href="https://www.youtube.com/watch?v=-D30ckwLrJw" target="_blank">
 						<img src="images/song-covers/bushwhack.png" alt="Bushwhack album art">
 					</a>
@@ -218,7 +198,7 @@
 				</div>
 
 				<!-- Milf -->
-				<div class="remix">
+				<div class="songbox remix">
 					<a href="https://www.youtube.com/watch?v=5_m4uNeaziw" target="_blank">
 						<img src="images/song-covers/milf.png" alt="Milf album art">
 					</a>
@@ -230,7 +210,7 @@
 				</div>
 
 				<!-- Energy Crystal -->
-				<div class="original">
+				<div class="songbox original">
 					<a href="https://www.youtube.com/watch?v=cQHHJKwctaY" target="_blank">
 						<img src="images/song-covers/energy-crystal.png" alt="Energy Crystal album art">
 					</a>
@@ -243,7 +223,7 @@
 				</div>
 
 				<!-- Acid Spewing Atrocity -->
-				<div class="ost">
+				<div class="songbox ost">
 					<a href="https://www.youtube.com/watch?v=a4gW4cioqZU" target="_blank">
 						<img src="images/song-covers/acid-spewing-atrocity.png" alt="Acid Spewing Atrocity album art">
 					</a>
@@ -256,7 +236,7 @@
 
 				
 				<!-- DJ Subatomic Supernova -->
-				<div class="remix">
+				<div class="songbox remix">
 					<a href="https://www.youtube.com/watch?v=7RY2RbSFDcM" target="_blank">
 						<img src="images/song-covers/dj-subatomic.png" alt="DJ Subatomic Supernova album art">
 					</a>
@@ -267,15 +247,68 @@
 					</div>
 				</div>
 
-				<script>
-					function showOriginal() {
-						var original = document.getElementsByClassName("original").style.display;
-
-						document.getElementsByClassName('original').style.display = 'none';
-					}
-				</script>
-
+				<!-- (Song list ends here) -->
 			</div>
+
+			<script>
+				
+				// Add the "show" class to selected songs, and remove the "show" class from filtered out songs
+				filterSongs("all")
+				function filterSongs(c)
+				{
+					var x, i;
+					x = document.getElementsByClassName("songbox");
+					if (c == "all") c = "";
+					for (i = 0; i < x.length; i++)
+					{
+						removeClass(x[i], "show");
+						if (x[i].className.indexOf(c) > -1) addClass(x[i], "show");
+					}
+				}
+		
+				// Show selected song category
+				function addClass(element, name)
+				{
+					var i, arr1, arr2;
+					arr1 = element.className.split(" ");
+					arr2 = name.split(" ");
+					for (i = 0; i < arr2.length; i++)
+					{
+						if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
+					}
+				}
+		
+				// Hide categories that are not selected
+				function removeClass(element, name)
+				{
+					var i, arr1, arr2;
+					arr1 = element.className.split(" ");
+					arr2 = name.split(" ");
+					for (i = 0; i < arr2.length; i++)
+					{
+						while (arr1.indexOf(arr2[i]) > -1)
+						{
+							arr1.splice(arr1.indexOf(arr2[i]), 1);     
+						}
+					}
+					element.className = arr1.join(" ");
+				}
+		
+				// Add "current" class to currently active button for styling
+				var btnBox = document.getElementById("button-box");
+				var btns = btnBox.getElementsByClassName("button");
+				for (var i = 0; i < btns.length; i++)
+				{
+					btns[i].addEventListener
+					("click", function(){
+						var current = document.getElementsByClassName("current");
+						current[0].className = current[0].className.replace(" current", "");
+						this.className += " current";
+					});
+				}
+				
+			</script>
+
 		</div>
 
 	</main>

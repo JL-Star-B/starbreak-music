@@ -376,6 +376,7 @@ p
 #discord a:hover
 {
     background-image: linear-gradient(#1980FC, #0B0061);
+    filter: drop-shadow(0px 0px 3px #51FFE0);
 }
 #discord img
 {
@@ -395,28 +396,42 @@ p
     background-image: linear-gradient(to right, #0B0061, #2400B0, #0B0061);
     background-clip: border-box;
 }
-#song-sort
+#button-box
 {
-    height: 280px;
-    width: 90%;
+    height: min-content;
+    width: 100%;
     margin: auto;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
-#song-sort button
+.button
 {
-    color: #51FFE0;
+    color: #1980FC;
     font-family: 'Orbitron Medium', Helvetica, sans-serif;
     font-size: 24px;
     width: 200px;
     height: 50px;
-    margin: 0px 10px 10px 10px;
+    margin: 20px 10px 10px 10px;
     background-image: linear-gradient(#0B0061, #060025);
     border-radius: 10px;
 }
-#song-sort button:hover
+.button:hover
 {
     cursor: pointer;
+    color: #51FFE0;
+    background-image: linear-gradient(#1980FC, #0B0061);
+}
+.button:active
+{
+    background-image: linear-gradient(#1980FC, #0B0061);
+    filter: brightness(80%) contrast(130%);
+}
+.button.current
+{
+    color: #51FFE0;
+    filter: drop-shadow(0px 0px 3px #51FFE0);
 }
 #grid
 {
@@ -436,11 +451,10 @@ p
 {
     filter: brightness(100%) drop-shadow(0px 0px 5px black);
 }
-.original, .remix, .ost
+.songbox
 {
     width: 250px;
     height: 350px;
-    display: block;
     margin: 20px;
     background-image: linear-gradient(#51FFE0, #17AF9A);
     background-clip: border-box;
@@ -448,10 +462,11 @@ p
     border-width: 3px;
     border-style: solid;
     border-radius: 4px;
+    display: none; /* Default is none to hide content for sorting function */
 }
-.hide
+.show /* Used for showing selected song categories via sort function */
 {
-    display: none;
+    display: block;
 }
 .info
 {
