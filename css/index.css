@@ -20,19 +20,13 @@
 /* --Initial styling-- */
 body
 {
-    background: #060025;
+    background: #05013B;
     overflow-x: hidden;
 }
 main
 {
     min-width: 900px;
 }
-
-/* #thinner
-{
-    width: 75%;
-    margin: auto;
-}  /* Gives pages thinner main content area to exclude side images; used on every main page besides index */
 
 /* --Makes links color shift when hovered over-- */
 li a:hover
@@ -45,6 +39,11 @@ li img:hover
 }
 
 /* --Fun secret stuff-- */
+#dark-bg
+{
+    background-image: url(../images/dark-bg.png);
+    background-clip: border-box;
+}
 #secret-1
 {
     position: relative;
@@ -56,6 +55,18 @@ li img:hover
 #secret-1 img
 {
     width: 15px;
+}
+
+#secret-2
+{
+    position: relative;
+    bottom: 29px;
+    left: 46%;
+    opacity: 0;
+}
+#secret-2 img
+{
+    width: 13px;
 }
 
 /* --Header-- */
@@ -83,6 +94,7 @@ nav
     z-index: 100;
     overflow-x: hidden;
     overflow-y: hidden;
+    box-shadow: 0px 20px 30px -20px #060025;
 }
 nav a
 {
@@ -93,6 +105,8 @@ nav a
     margin-top: 42px;
     font-size: 200%;
     text-decoration: none;
+    filter: drop-shadow(0px 0px 5px #05013B);
+    transition: transform 0.2s;
 }   
 nav ul
 {
@@ -101,6 +115,10 @@ nav ul
     text-align: center;
     position: relative;
     right: 205px;
+}
+nav a:hover
+{
+    transform: scale(1.04, 1.04);
 }
 nav li
 {
@@ -132,20 +150,20 @@ nav li
     min-width: 100px;
 }
 
-#side-a-long
+#side-a-fade
 {
     height: 860px; /*full is 860px*/
     width: 12.5%; /*full is 170px*/
-    background-image: url(../images/side-image-left.png);
+    background-image: url(../images/side-image-left-fade.png);
     background-size: auto;
     float: left;
     min-width: 100px;
 }
-#side-b-long
+#side-b-fade
 {
     height: 860px;
     width: 12.5%;
-    background-image: url(../images/side-image-right.png);
+    background-image: url(../images/side-image-right-fade.png);
     background-size: auto;
     float: right;
     min-width: 100px;
@@ -161,7 +179,6 @@ ul
 li
 {
     float: left;
-
 }
 
 /* --Text colors/fonts-- */
@@ -191,6 +208,7 @@ p
     font-family: 'Bahnschrift SemiBold', 'Franklin Gothic Medium', sans-serif;
     font-size: large;
     padding: 10px;
+    text-shadow: 1px 1px 1px #0B0061;
 }
 .dark
 {
@@ -199,6 +217,14 @@ p
 .light
 {
     text-shadow: 3px 3px #1980FC;
+}
+p.dark
+{
+    text-shadow: 1px 1px 1px #0B0061;
+}
+p.light
+{
+    text-shadow: 1px 1px 1px #1980FC;
 }
 
 /* --Page Title-- */
@@ -285,6 +311,11 @@ p
 #listen-on li
 {
     margin-top: 10px;
+    transition: transform 0.2s;
+}
+#listen-on li:hover
+{
+    transform: scale(1.05, 1.05);
 }
 #listen-on section
 {
@@ -396,43 +427,6 @@ p
     background-image: linear-gradient(to right, #0B0061, #2400B0, #0B0061);
     background-clip: border-box;
 }
-#button-box
-{
-    height: min-content;
-    width: 100%;
-    margin: auto;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-}
-.button
-{
-    color: #1980FC;
-    font-family: 'Orbitron Medium', Helvetica, sans-serif;
-    font-size: 24px;
-    width: 200px;
-    height: 50px;
-    margin: 20px 10px 10px 10px;
-    background-image: linear-gradient(#0B0061, #060025);
-    border-radius: 10px;
-}
-.button:hover
-{
-    cursor: pointer;
-    color: #51FFE0;
-    background-image: linear-gradient(#1980FC, #0B0061);
-}
-.button:active
-{
-    background-image: linear-gradient(#1980FC, #0B0061);
-    filter: brightness(80%) contrast(130%);
-}
-.button.current
-{
-    color: #51FFE0;
-    filter: drop-shadow(0px 0px 3px #51FFE0);
-}
 #grid
 {
     display: flex;
@@ -446,10 +440,12 @@ p
 {
     margin: 15px;
     filter: sepia(100%) brightness(75%) hue-rotate(170deg) saturate(320%) contrast(115%);
+    transition: transform 0.2s;
 }
 #grid img:hover
 {
     filter: brightness(100%) drop-shadow(0px 0px 5px black);
+    transform: scale(1.02, 1.02);
 }
 .songbox
 {
@@ -503,22 +499,225 @@ p
 {
     filter: brightness(70%);
 }
-/* 
-Use display: block and display: none to hide and reveal songs to sort list
 
-*/
+/* --Sort button styling-- */
+#button-box
+{
+    height: min-content;
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.button
+{
+    color: #1980FC;
+    font-family: 'Orbitron Medium', Helvetica, sans-serif;
+    font-size: 24px;
+    width: 200px;
+    height: 50px;
+    margin: 20px 10px 10px 10px;
+    background-image: linear-gradient(#0B0061, #060025);
+    border-radius: 10px;
+    transition: transform 0.2s;
+}
+.button:hover
+{
+    cursor: pointer;
+    color: #51FFE0;
+    background-image: linear-gradient(#1980FC, #0B0061);
+    transform: scale(1.03, 1.03);
+}
+.button:active
+{
+    background-image: linear-gradient(#1980FC, #0B0061);
+    filter: brightness(80%) contrast(130%);
+}
+.button.current
+{
+    color: #51FFE0;
+    filter: drop-shadow(0px 0px 3px #51FFE0);
+}
+
+    /* - - - - WORLD PAGE STYLING - - - - */
+
+/* --Entry list section-- */
+#entrylist
+{
+    height: min-content;
+    width: 75%;
+    margin: auto;
+    display: block;
+    background-image: linear-gradient(to right, #0B0061, #2400B0, #0B0061);
+    background-clip: border-box;
+}
+#entrylist h2
+{
+    padding-top: 28px;
+}
+#song-lore, #char-lore
+{
+    float: right;
+    margin: 20px;
+    color: #1980FC;
+    font-size: larger;
+}
+#song-lore a, #char-lore a
+{
+    color: #51FFE0;
+    text-decoration: none;
+    font-size: 26px;
+    background-image: linear-gradient(#0B0061, #060025);
+    padding: 5px 10px 8px 10px;
+    border-radius: 5px;
+}
+#song-lore a:hover, #char-lore a:hover
+{
+    background-image: linear-gradient(#1980FC, #0B0061);
+}
+.entries
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    height: min-content;
+    padding-bottom: 20px;
+}
+.dropdown
+{
+    color: #51FFE0;
+    font-family: 'Bahnschrift SemiBold', 'Franklin Gothic Medium', sans-serif;
+    font-size: larger;
+    font-weight: bold;
+    background-image: linear-gradient(#0B0061, #060025);
+    padding: 12px;
+    margin-top: 15px;
+    width: 98%;
+    border-radius: 10px;
+    text-align: left;
+    transition: transform 0.2s;
+}
+.dropdown:hover
+{
+    cursor: pointer;
+    background-image: linear-gradient(#1980FC, #0B0061);
+    transform: scale(1.01, 1.01);
+}
+.dropdown:active
+{
+    background-image: linear-gradient(#1980FC, #0B0061);
+    filter: brightness(80%) contrast(130%);
+}
+.dropdown small, .dropdown sub
+{
+    color: #1980FC;
+}
+.active
+{
+    filter: drop-shadow(0px 0px 3px #51FFE0);
+}
+.description
+{
+    padding: 0px 18px;
+    display: none;
+    overflow: hidden;
+    background-image: linear-gradient(to right, #060025, #05013B, #060025);
+    background-clip: border-box;
+    width: 91%;
+    border-radius: 0px 0px 10px 10px;
+}
+.description h2
+{
+    margin: 0px;
+    padding: 1px;
+}
+.description h3
+{
+    margin-bottom: 5px;
+}
+.description p, .description li
+{
+    color: #51FFE0;
+    font-family: 'Bahnschrift SemiBold', 'Franklin Gothic Medium', sans-serif;
+    font-size: large;
+    padding: 8px;
+    margin: 2px;
+}
+.description ul
+{
+    list-style-type: disc;
+    margin-left: 15px;
+    text-align: justify;
+    text-justify: auto;
+}
+.description img
+{
+    margin: 10px;
+    float: right;
+    width: 30%;
+}
 
     /* - - - - ABOUT PAGE STYLING - - - - */
 
 /* --Bio section-- */
 #bio
 {
-    height: 275px;
+    height: min-content;
     width: 75%;
     margin: auto;
     display: block;
-    background-image: linear-gradient(#0B0061, #2400B0);
+    background-image: linear-gradient(to right, #0B0061, #2400B0, #0B0061);
     background-clip: border-box;
+}
+#bio img
+{
+    width: 250px;
+    border-width: 5px;
+    border-color: #51FFE0;
+    border-style: solid;
+    border-radius: 10px;
+}
+#bio p
+{
+    text-align: justify;
+    text-justify: auto;
+}
+
+/* --Contact section-- */
+#contact
+{
+    height: 200px;
+    width: 75%;
+    margin: auto;
+    display: block;
+    background-image: linear-gradient(#51FFE0, #17AF9A);
+    background-clip: border-box;
+}
+#contact h2
+{
+    color: #1980FC;
+    margin-bottom: 4px;
+}
+#contact p
+{
+    color: #51FFE0;
+    padding: 3px;
+    margin-left: 20px;
+    font-size: x-large;
+}
+#contact div
+{
+    width: 90%;
+    margin: auto;
+    background-color: #05013B;
+    border-radius: 10px;
+    padding: 10px;
+    position: relative;
+    top: 5px;
 }
 
 /* --Feedback section-- */
@@ -528,14 +727,13 @@ Use display: block and display: none to hide and reveal songs to sort list
     width: 75%;
     margin: auto;
     display: block;
-    background-image: linear-gradient(#51FFE0, #17AF9A);
+    background-image: linear-gradient(#0B0061, #2400B0);
     background-clip: border-box;
     min-width: 800px;
 }
 #feedback h2
 {
     text-align: center;
-    color: #1980FC;
 }
 #feedback form
 {
@@ -544,6 +742,9 @@ Use display: block and display: none to hide and reveal songs to sort list
     margin: auto;
     margin-top: 10px;
     background-image: linear-gradient(#0B0061, #060025);
+    border: #1980FC;
+    border-width: 2px;
+    border-style: solid;
     border-radius: 10px;
 }
 #entry-a
@@ -604,9 +805,9 @@ textarea
     color: #51FFE0;
     font-family: 'Bahnschrift SemiBold', 'Franklin Gothic Medium', sans-serif;
     font-size: larger;
-    background-image: linear-gradient(#0B0061, #2400B0);
+    background-image: linear-gradient(#1980FC, #2400B0);
     background-clip: border-box;
-    border-color: #060025;
+    border-color: #0B0061;
     border-width: 2px;
     border-style: solid;
     border-radius: 5px;
