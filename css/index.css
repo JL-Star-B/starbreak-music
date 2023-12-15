@@ -29,11 +29,7 @@ main
 }
 
 /* --Makes links color shift when hovered over-- */
-li a:hover
-{
-    color: #1980FC;
-}
-li img:hover
+a img:hover
 {
     filter: brightness(70%) contrast(165%);
 }
@@ -85,8 +81,12 @@ nav
 {
     height: 80px;
     width: 100%;
-    min-width: 950px;
-    display: block;
+    min-width: 850px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
     background-image: linear-gradient(#0B0061, #2400B0);
     background-clip: border-box;
     position: sticky;
@@ -102,32 +102,20 @@ nav a
     font-family: 'Orbitron Medium', Helvetica, sans-serif;
     display: block;
     margin: 24px;
-    margin-top: 42px;
     font-size: 200%;
     text-decoration: none;
     filter: drop-shadow(0px 0px 5px #05013B);
     transition: transform 0.2s;
 }   
-nav ul
-{
-    margin-left: 20%;
-    margin-right: -50%;
-    text-align: center;
-    position: relative;
-    right: 205px;
-}
 nav a:hover
 {
     transform: scale(1.04, 1.04);
+    color: #1980FC;
 }
-nav li
+nav img
 {
-    margin-top: -24px;
-}
-#nav-icon
-{
-    width: 59%;
-    margin-top: -12px;
+    width: 70px;
+    margin-top: 10px;
 }
 
 /* --Side images-- */
@@ -469,7 +457,6 @@ p.light
     background-color: #060025;
     width: 250px;
     height: 97px;
-    
 }
 .info h3
 {
@@ -494,6 +481,7 @@ p.light
     margin: 4px;
     position: relative;
     bottom: 20px;
+    color: #51FFE0;
 }
 .info a:hover
 {
@@ -557,14 +545,14 @@ p.light
 {
     padding-top: 28px;
 }
-#song-lore, #char-lore
+.category
 {
     float: right;
     margin: 20px;
     color: #1980FC;
     font-size: larger;
 }
-#song-lore a, #char-lore a
+.category a
 {
     color: #51FFE0;
     text-decoration: none;
@@ -573,7 +561,7 @@ p.light
     padding: 5px 10px 8px 10px;
     border-radius: 5px;
 }
-#song-lore a:hover, #char-lore a:hover
+.category a:hover
 {
     background-image: linear-gradient(#1980FC, #0B0061);
 }
@@ -597,6 +585,7 @@ p.light
     padding: 12px;
     margin-top: 15px;
     width: 98%;
+    height: min-content;
     border-radius: 10px;
     text-align: left;
     transition: transform 0.2s;
@@ -629,6 +618,7 @@ p.light
     background-clip: border-box;
     width: 91%;
     border-radius: 0px 0px 10px 10px;
+    transition: transform 0.5s;
 }
 .description h2
 {
@@ -676,9 +666,7 @@ p.light
 #bio img
 {
     width: 250px;
-    border-width: 5px;
-    border-color: #51FFE0;
-    border-style: solid;
+    border: 5px solid #51FFE0;
     border-radius: 10px;
 }
 #bio p
@@ -714,6 +702,7 @@ p.light
     width: 90%;
     margin: auto;
     background-color: #05013B;
+    border: 5px solid #2400B0;
     border-radius: 10px;
     padding: 10px;
     position: relative;
@@ -721,7 +710,7 @@ p.light
 }
 
 /* --Feedback section-- */
-#feedback
+/* #feedback
 {
     height: 400px;
     width: 75%;
@@ -817,7 +806,7 @@ textarea
 #submit:hover
 {
     filter: brightness(80%) contrast(165%);
-}
+} */
 
 /* --Footer-- */
 hr
@@ -894,15 +883,16 @@ footer a
     {
         color: #51FFE0;
         font-family: 'Orbitron Medium', Helvetica, sans-serif;
-        display: block;
-        margin: 38px;
+        display: flex;
+        flex-wrap: nowrap;
+        margin: 0% 3% 0% 3%;
         font-size: 250%;
         text-decoration: none;
     } 
-    #nav-icon
+    nav img
     {
-        width: 65%;
-        margin-top: -12px;
+        width: 78px;
+        margin-top: 0px;
     }
 
     #listen-on li
