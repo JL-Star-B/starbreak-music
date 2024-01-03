@@ -336,9 +336,7 @@ p.light
 {
     width: 70%;
     margin: auto;
-    border-width: 5px;
-    border-color: #0B0061;
-    border-style: solid;
+    border: 5px solid #0B0061;
     border-radius: 10px;
     position: relative;
     top: 18px;
@@ -353,9 +351,9 @@ p.light
     display: block;
     background-image: linear-gradient(#0B0061, #2400B0);
     background-clip: border-box;
-    position: relative;
+    overflow-x: hidden;
 }
-#feed iframe
+#feed > div
 {
     width: 100%;
 }
@@ -381,18 +379,18 @@ p.light
     min-width: 1000px;
     display: block;
 }
-#discord a
+#discord button
 {
+    margin: auto;
     color: #51FFE0;
     text-decoration: none;
-    padding: 12px 50px 12px 50px;
     background-image: linear-gradient(#0B0061, #060025);
     border-radius: 10px;
     position: relative;
-    top: 15px;
-    left: 60px;
+    right: 200px;
+    top: 15px
 }
-#discord a:hover
+#discord button:hover
 {
     background-image: linear-gradient(#1980FC, #0B0061);
     filter: drop-shadow(0px 0px 3px #51FFE0);
@@ -442,9 +440,7 @@ p.light
     margin: 20px;
     background-image: linear-gradient(#51FFE0, #17AF9A);
     background-clip: border-box;
-    border: #1980FC;
-    border-width: 3px;
-    border-style: solid;
+    border: 3px solid #1980FC;
     border-radius: 4px;
     display: none; /* Default is none to hide content for sorting function */
 }
@@ -601,17 +597,21 @@ p.light
     background-image: linear-gradient(#1980FC, #0B0061);
     filter: brightness(80%) contrast(130%);
 }
-.dropdown small, .dropdown sub
-{
-    color: #1980FC;
-}
 .active
 {
     filter: drop-shadow(0px 0px 3px #51FFE0);
 }
+.dropdown small
+{
+    color: #1980FC;
+}
+.dropdown:hover small
+{
+    color: #51FFE0;
+}
 .description
 {
-    padding: 0px 18px;
+    padding: 0px 18px 5px;
     display: none;
     overflow: hidden;
     background-image: linear-gradient(to right, #060025, #05013B, #060025);
@@ -620,10 +620,14 @@ p.light
     border-radius: 0px 0px 10px 10px;
     transition: transform 0.5s;
 }
+.description > div
+{
+    display: block;
+    height: min-content;
+}
 .description h2
 {
     margin: 0px;
-    padding: 1px;
 }
 .description h3
 {
@@ -636,6 +640,20 @@ p.light
     font-size: large;
     padding: 8px;
     margin: 2px;
+}
+.description table
+{
+    margin: 8px;
+    border-collapse: collapse;
+}
+.description td
+{
+    color: #51FFE0;
+    font-family: 'Orbitron Medium', Helvetica, sans-serif;
+    font-size: larger;
+    padding: 6px 30px 7px 2px;
+    width: fit-content;
+    border-bottom: 2px solid #51FFE0;
 }
 .description ul
 {
@@ -671,6 +689,7 @@ p.light
 }
 #bio p
 {
+    margin: 5px 8px 0px 8px;
     text-align: justify;
     text-justify: auto;
 }
@@ -926,11 +945,9 @@ footer a
     }
     #discord img
     {
-        margin: 10px;
-        margin-right: 2%;
         position: relative;
         left: 76%;
-        bottom: 214px;
+        bottom: 190px;
         display: block;
         float: left;
         visibility: visible;
