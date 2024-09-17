@@ -105,7 +105,7 @@ nav a
     font-size: 200%;
     text-decoration: none;
     filter: drop-shadow(0px 0px 5px #05013B);
-    transition: transform 0.2s;
+    transition: transform 0.2s ease-out;
 }   
 nav a:hover
 {
@@ -214,6 +214,10 @@ p.light
 {
     text-shadow: 1px 1px 1px #1980FC;
 }
+/* #title > h1
+{
+    text-shadow: -2px -2px #1980FC, 3px 3px #0B0061;
+} */
 
 /* --Page Title-- */
 #title
@@ -231,6 +235,11 @@ p.light
     text-align: center;
     color: #2400B0;
     font-size: 44px;
+    transition: transform 0.4s ease-out;
+}
+#title h1.loaded /* animates title on page load */
+{
+    transform: translate(300px);
 }
 
     /* - - - - HOME PAGE STYLING - - - - */
@@ -422,17 +431,6 @@ p.light
     height: min-content;
     padding-bottom: 60px;
 }
-#grid img /* Album art; images need to be 220px by 220px */
-{
-    margin: 15px;
-    filter: sepia(100%) brightness(75%) hue-rotate(170deg) saturate(320%) contrast(115%);
-    transition: transform 0.2s;
-}
-#grid img:hover
-{
-    filter: brightness(100%) drop-shadow(0px 0px 5px black);
-    transform: scale(1.02, 1.02);
-}
 .songbox
 {
     width: 250px;
@@ -448,6 +446,20 @@ p.light
 {
     display: block;
 }
+
+.songbox img /* Album art; images need to be 220px by 220px */
+{
+    margin: 15px;
+    filter: sepia(100%) brightness(80%) hue-rotate(175deg) saturate(320%) contrast(110%);
+    transition: transform 0.2s;
+}
+.songbox img:hover
+{
+    filter: brightness(100%) drop-shadow(0px 0px 5px black);
+    transform: scale(1.028, 1.028);
+
+}
+
 .info
 {
     background-color: #060025;
@@ -584,7 +596,7 @@ p.light
     height: min-content;
     border-radius: 10px;
     text-align: left;
-    transition: transform 0.2s;
+    transition: transform 0.2s ease-out;
 }
 .dropdown:hover
 {
@@ -609,6 +621,12 @@ p.light
 {
     color: #51FFE0;
 }
+.dropdown img
+{
+    float: left;
+    width: 30px;
+    margin: -4px 9px -5px 0px;
+}
 .description
 {
     padding: 0px 18px 5px;
@@ -618,16 +636,11 @@ p.light
     background-clip: border-box;
     width: 91%;
     border-radius: 0px 0px 10px 10px;
-    transition: transform 0.5s;
-}
-.description > div
-{
-    display: block;
-    height: min-content;
 }
 .description h2
 {
     margin: 0px;
+    padding-left: 5px;
 }
 .description h3
 {
@@ -667,6 +680,16 @@ p.light
     margin: 10px;
     float: right;
     width: 30%;
+}
+.description hr
+{
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid #51FFE0;
+    width: 98%;
 }
 
     /* - - - - ABOUT PAGE STYLING - - - - */
@@ -828,17 +851,15 @@ textarea
 } */
 
 /* --Footer-- */
-hr
+footer hr
 {
     display: block;
     margin-top: 12px;
     margin-bottom: 1px;
     margin-left: auto;
     margin-right: auto;
-    border-style: solid;
-    border-width: 1px;
+    border: 1px solid #51FFE0;
     width: 70%;
-    color: #51FFE0;
 }
 #footer-links
 {
