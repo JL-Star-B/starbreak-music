@@ -9,6 +9,7 @@
 
 	<link rel="icon" type="image/x-icon" href="images/page-icon.png">
 	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<script src="scripts/hide-top-arrow.js" ></script>
 	<script src="https://kit.fontawesome.com/16cf5f0845.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -27,7 +28,12 @@
 		<a href="about.html">About</a>
 	</nav>
 
-	<main onload="titleLoad()">
+	<!-- RETURN TO TOP -->
+	<button id="top-arrow" onclick='window.scrollTo({top: 0, behavior: "smooth"});'>
+		<img src="images/top-arrow.png" alt="Return to page top">
+	</button>
+
+	<main>
 
 		<!-- SIDE IMAGES -->
 		<div id="side-a-fade">
@@ -37,9 +43,9 @@
 
 		<!-- PAGE TITLE -->
 		<section id="title">
-			<h1 id="title-header" class="dark">Discography</h1> <!-- title-header id used for onload function -->
+			<h1>Discography</h1>
 			<div id="secret-2">
-				<a href="s2.html"><img src="images/hidden.png" alt="Blank image"></a>
+				<a href="s2.html" target="_blank"><img src="images/hidden.png" alt="Blank image"></a>
 			</div>
 		</section>
 
@@ -440,12 +446,21 @@
 
 			<script>
 
-				// Add class to animate title header on page load
-				function titleLoad()
-				{
-					var pageTitle = document.getElementById("title-header");
-					pageTitle.classList.add("loaded");
-				}
+				// let topbutton = document.getElementById("top-arrow");
+
+				// window.onscroll = function() {scrollFunction()};
+
+				// function scrollFunction()
+				// {
+				// 	if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500)
+				// 	{
+				// 		topbutton.style.display = "block";
+				// 	}
+				// 	else
+				// 	{
+				// 	topbutton.style.display = "none";
+				// 	}
+				// }
 				
 				// Add the "show" class to selected songs, and remove the "show" class from filtered out songs
 				filterSongs("all")

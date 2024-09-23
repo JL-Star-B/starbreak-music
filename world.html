@@ -9,6 +9,7 @@
 
 	<link rel="icon" type="image/x-icon" href="images/page-icon.png">
 	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<script src="scripts/hide-top-arrow.js" ></script>
 	<script src="https://kit.fontawesome.com/16cf5f0845.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -27,6 +28,11 @@
 		<a href="about.html">About</a>
 	</nav>
 
+	<!-- RETURN TO TOP -->
+	<button id="top-arrow" onclick='window.scrollTo({top: 0, behavior: "smooth"});'>
+		<img src="images/top-arrow.png" alt="Return to page top">
+	</button>
+	
 	<main>
 
 		<!-- SIDE IMAGES -->
@@ -37,7 +43,7 @@
 
 		<!-- PAGE TITLE -->
 		<section id="title">
-			<h1 class="dark">World</h1>
+			<h1>World</h1>
 		</section>
 
 		<!-- ENTRY LIST -->

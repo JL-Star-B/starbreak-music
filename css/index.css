@@ -56,13 +56,13 @@ a img:hover
 #secret-2
 {
     position: relative;
-    bottom: 29px;
-    left: 46%;
+    bottom: 34px;
+    left: 34.5%;
     opacity: 0;
 }
 #secret-2 img
 {
-    width: 13px;
+    width: 14px;
 }
 
 /* --Header-- */
@@ -116,6 +116,24 @@ nav img
 {
     width: 70px;
     margin-top: 10px;
+}
+
+/* --Return to Top-- */
+/* #top-arrow (controlled by mobile layout)
+{
+    display: none;
+    position: fixed;
+    background: none;
+    bottom: 20px;
+    right: 3%;
+    z-index: 100;
+    transition: transform 0.2s;
+} */
+#top-arrow:hover
+{
+    cursor: pointer;
+    filter: brightness(70%) contrast(165%);
+    transform: scale(1.1, 1.1);
 }
 
 /* --Side images-- */
@@ -233,13 +251,20 @@ p.light
 #title h1
 {
     text-align: center;
-    color: #2400B0;
-    font-size: 44px;
-    transition: transform 0.4s ease-out;
+    position: relative;
+    color: #51FFE0;
+    font-size: 48px;
+    font-weight: bolder;
+    font-style: italic;
+    padding-top: 6px;
+    text-shadow: 4px 4px #0B0061;
+    animation: title-slide 1s;
+    animation-fill-mode: forwards;
 }
-#title h1.loaded /* animates title on page load */
+@keyframes title-slide /* animation for page title sliding in */
 {
-    transform: translate(300px);
+    from {right: 1000px;}
+    to {right: 0px;}
 }
 
     /* - - - - HOME PAGE STYLING - - - - */
@@ -394,7 +419,6 @@ p.light
     color: #51FFE0;
     text-decoration: none;
     background-image: linear-gradient(#0B0061, #060025);
-    border-radius: 10px;
     position: relative;
     right: 200px;
     top: 15px
@@ -516,7 +540,7 @@ p.light
     height: 50px;
     margin: 20px 10px 10px 10px;
     background-image: linear-gradient(#0B0061, #060025);
-    border-radius: 10px;
+    clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);
     transition: transform 0.2s;
 }
 .button:hover
@@ -534,7 +558,8 @@ p.light
 .button.current
 {
     color: #51FFE0;
-    filter: drop-shadow(0px 0px 3px #51FFE0);
+    /* filter: drop-shadow(0px 0px 3px #51FFE0); */
+    box-shadow: 0px 0px 3px #51FFE0;
 }
 
     /* - - - - WORLD PAGE STYLING - - - - */
@@ -933,6 +958,17 @@ footer a
     {
         width: 78px;
         margin-top: 0px;
+    }
+
+    #top-arrow
+    {
+        display: none;
+        position: fixed;
+        background: none;
+        bottom: 20px;
+        right: 3%;
+        z-index: 100;
+        transition: transform 0.2s;
     }
 
     #listen-on li
