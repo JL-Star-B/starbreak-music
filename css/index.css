@@ -119,16 +119,13 @@ nav img
 }
 
 /* --Return to Top-- */
-/* #top-arrow (controlled by mobile layout)
+#top-arrow
 {
     display: none;
     position: fixed;
     background: none;
-    bottom: 20px;
-    right: 3%;
-    z-index: 100;
-    transition: transform 0.2s;
-} */
+    left: 400px;
+}
 #top-arrow:hover
 {
     cursor: pointer;
