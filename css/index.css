@@ -124,7 +124,10 @@ nav img
     display: none;
     position: fixed;
     background: none;
-    left: 400px;
+    bottom: 20px;
+    right: 3%;
+    z-index: 100;
+    transition: transform 0.2s;
 }
 #top-arrow:hover
 {
