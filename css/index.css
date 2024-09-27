@@ -27,8 +27,12 @@ main
 {
     min-width: 900px;
 }
+html
+{
+    scroll-behavior: smooth;
+}
 
-/* --Makes links color shift when hovered over-- */
+/* --Makes all links color shift when hovered over-- */
 a img:hover
 {
     filter: brightness(70%) contrast(165%);
@@ -125,15 +129,22 @@ nav img
     position: fixed;
     background: none;
     bottom: 20px;
-    right: 3%;
+    right: -200px;
     z-index: 100;
     transition: transform 0.2s;
+    animation: arrow-slide-in 0.5s;
+    animation-fill-mode: forwards;
 }
 #top-arrow:hover
 {
     cursor: pointer;
     filter: brightness(70%) contrast(165%);
     transform: scale(1.1, 1.1);
+}
+@keyframes arrow-slide-in /* animation for "back to top" arrow sliding OUT */
+{
+    from {right: -200px;}
+    to {right: 0;}
 }
 
 /* --Side images-- */
@@ -280,27 +291,46 @@ p.light
     background-clip: border-box;
     min-width: 800px;
 }
-#new-music img
+#vid-frame /* Frame for video embed */
 {
-    width: 79%;
+    width: 600px;
     margin: auto;
     position: relative;
-    top: 20px;
+
+    top: 65px;
 }
-#vid-embed
+#vid-embed /* div positioned over top of frame with matching proportions */
 {
-    max-height: 400px;
-}
-#vid-embed iframe
-{
-    width: 70.4%;
+    width:600px;
     margin: auto;
-    /* padding-top: 56.25%; */
-    /* overflow: hidden; */
     position: relative;
-    left: 15%;
-    bottom: 420px;
-    /* bottom: 890px; */
+
+    bottom: 285px;
+}
+#vid-embed div /* div inside previous div, slightly smaller to lay space for video embed */
+{
+    /* padding-top: 56.25%; - - - original 3/4 ratio */
+    padding-top: 50.25%;
+    margin-top: 3%;
+    width: 91%;
+    position: relative;
+    contain: content;
+}
+#vid-embed iframe /* iframe for video embed, maxed to fit space defined by prior div */
+{
+    /* margin-top: 3%;
+    margin-right: 3.5%;
+    margin-bottom: 3%;
+    margin-left: 3.5%; */
+
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
     z-index: 98;
 }
 
@@ -395,13 +425,15 @@ p.light
 /* --Discord section-- */
 #discord
 {
-    float: left;
-    height: 280px;
-    width: 100%;
+
+    height: min-content;
+    contain: content;
     display: block;
     background-image: linear-gradient(#0B0061, #2400B0);
     background-clip: border-box;
-    min-width: 800px;
+    border-top: 5px solid #0B0061;
+    min-width: 200px;
+    max-width: 1000px;
 }
 #discord h2
 {
@@ -410,27 +442,33 @@ p.light
 #discord p
 {
     margin-left: 2%;
-    min-width: 1000px;
+    padding-right: 80px;
+    min-width: 200px;
     display: block;
 }
 #discord button
 {
-    margin: auto;
-    color: #51FFE0;
-    text-decoration: none;
+    width: 35%;
     background-image: linear-gradient(#0B0061, #060025);
+    filter: drop-shadow(0px 0px 5px #1980FC);
+    float: none;
     position: relative;
-    right: 200px;
-    top: 15px
+    left: 50%;
+    bottom: 20px;
 }
 #discord button:hover
 {
     background-image: linear-gradient(#1980FC, #0B0061);
     filter: drop-shadow(0px 0px 3px #51FFE0);
 }
+#discord a
+{
+    color: #51FFE0;
+    text-decoration: none;
+}
 #discord img
 {
-    visibility: hidden;
+    display: none;
 }
 
     /* - - - - DISCOGRAPHY PAGE STYLING - - - - */
@@ -445,6 +483,7 @@ p.light
     display: block;
     background-image: linear-gradient(to right, #0B0061, #2400B0, #0B0061);
     background-clip: border-box;
+    overflow: hidden;
 }
 #grid
 {
@@ -457,6 +496,7 @@ p.light
 }
 .songbox
 {
+    position: relative;
     width: 250px;
     height: 350px;
     margin: 20px;
@@ -465,10 +505,17 @@ p.light
     border: 3px solid #1980FC;
     border-radius: 4px;
     display: none; /* Default is none to hide content for sorting function */
+    animation: songs-fadein 0.5s;
+    animation-fill-mode: forwards;
 }
 .show /* Used for showing selected song categories via sort function */
 {
     display: block;
+}
+@keyframes songs-fadein /* animation for individual song containers fading in */
+{
+    from {bottom: -200px; opacity: 0;}
+    to {bottom: 0px; opacity: 1;}
 }
 
 .songbox img /* Album art; images need to be 220px by 220px */
@@ -530,6 +577,7 @@ p.light
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    filter: drop-shadow(0px 0px 5px #1980FC);
 }
 .button
 {
@@ -559,7 +607,7 @@ p.light
 {
     color: #51FFE0;
     /* filter: drop-shadow(0px 0px 3px #51FFE0); */
-    box-shadow: 0px 0px 3px #51FFE0;
+    box-shadow: 0px 0px 10px #51FFE0 inset;
 }
 
     /* - - - - WORLD PAGE STYLING - - - - */
@@ -662,6 +710,18 @@ p.light
     width: 91%;
     border-radius: 0px 0px 10px 10px;
 }
+.desc-content
+{
+    position: relative;
+    animation: bio-fadein 0.5s;
+    animation-fill-mode: forwards;
+}
+@keyframes bio-fadein /* animation for description content fading in when dropdown is opened */
+{
+    from {top: -200px; opacity: 0;}
+    to {top: 0px; opacity: 1;}
+}
+
 .description h2
 {
     margin: 0px;
@@ -761,7 +821,8 @@ p.light
 {
     color: #51FFE0;
     padding: 3px;
-    margin-left: 20px;
+    /* margin-left: 20px; */
+    text-align: center;
     font-size: x-large;
 }
 #contact div
@@ -937,7 +998,8 @@ footer a
     height: auto;
 }
 
-@media screen and (min-width: 1000px)
+
+@media screen and (min-width: 1000px) /* Default styles to apply if screen width is OVER 1000px */
 {
     header
     {
@@ -966,9 +1028,33 @@ footer a
         position: fixed;
         background: none;
         bottom: 20px;
-        right: 3%;
+        right: -200px;
         z-index: 100;
         transition: transform 0.2s;
+        animation: arrow-slide-in 0.5s;
+        animation-fill-mode: forwards;
+    }
+    @keyframes arrow-slide-in /* animation for "back to top" arrow sliding OUT */
+    {
+        from {right: -200px;}
+        to {right: 45px;}
+    }
+
+    #vid-frame /* Frame for video embed */
+    {
+        width: 800px;
+        margin: auto;
+        position: relative;
+
+        top: 20px;
+    }
+    #vid-embed /* div positioned over top of frame with matching proportions */
+    {
+        width: 800px;
+        margin: auto;
+        position: relative;
+
+        bottom: 445px;
     }
 
     #listen-on li
@@ -994,6 +1080,16 @@ footer a
         top: 12px;
     }
 
+    #discord
+    {
+        height: min-content;
+        display: block;
+        background-image: linear-gradient(#0B0061, #2400B0);
+        background-clip: border-box;
+        border-top: 5px solid #0B0061;
+        min-width: 1170px;
+        max-width: 100%;
+    }
     #discord p
     {
         margin-left: 5%;
@@ -1003,10 +1099,24 @@ footer a
     #discord img
     {
         position: relative;
-        left: 76%;
-        bottom: 190px;
+        height: 100%;
+        margin: 0;
+        margin-left: 0px;
+        padding: 0;
+        clip-path: polygon(15% 0%, 100% 0%, 100% 100%, 0% 100%);
         display: block;
-        float: left;
-        visibility: visible;
+        float: right;
+    }
+    #discord button
+    {
+        width: 220px;
+        margin: auto;
+        color: #51FFE0;
+        text-decoration: none;
+        background-image: linear-gradient(#0B0061, #060025);
+        float: none;
+        position: relative;
+        left: 50px;
+        top: 15px;
     }
 }

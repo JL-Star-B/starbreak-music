@@ -470,11 +470,17 @@
 					x = document.getElementsByClassName("songbox");
 					if (c == "all") c = "";
 					for (i = 0; i < x.length; i++)
-					{
+					{						
 						removeClass(x[i], "show");
 						if (x[i].className.indexOf(c) > -1) addClass(x[i], "show");
-					}
+					}					
 				}
+
+				// function fadeIn()
+				// {
+				// 	var boxes = document.getElementsByClassName("songbox");
+				// 	boxes.style.animationPlayState = "running";	
+				// }
 		
 				// Show selected song category
 				function addClass(element, name)
@@ -527,13 +533,13 @@
 	<footer>
 		<div id="footer-links">
 			<ul>
-				<li><a href="https://www.youtube.com/channel/UCgu90N1N7pfPfXaNsbizvhg" target="_blank"><img src="images/small-icon-youtube.png" alt="YouTube link"></a></li>
-				<li><a href="https://music.youtube.com/channel/UCRIKdurfay2wBPO3m6LCXlg" target="_blank"><img src="images/small-icon-ytmusic.png" alt="YouTube Music link"></a></li>
-				<li><a href="https://open.spotify.com/artist/2OXJInebuDCVlsJfYycYX0" target="_blank"><img src="images/small-icon-spotify.png" alt="Spotify link"></a></li>
-				<li><a href="https://music.apple.com/us/artist/starbreak/1631427509" target="_blank"><img src="images/small-icon-applem.png" alt="Apple Music link"></a></li>
-				<li><a href="https://discord.gg/JX97pK6wH9" target="_blank"><img src="images/small-icon-discord.png" alt="Discord link"></a></li>
-				<li><a href="https://twitter.com/StarbreakM" target="_blank"><img src="images/small-icon-twitter.png" alt="Twitter link"></a></li>
-				<li><a href="https://ko-fi.com/starbreakmusic" target="_blank"><img src="images/small-icon-kofi.png" alt="Ko-fi link"></a></li>
+				<li><a title="Youtube" href="https://www.youtube.com/channel/UCgu90N1N7pfPfXaNsbizvhg" target="_blank"><img src="images/small-icon-youtube.png" alt="YouTube link"></a></li>
+				<li><a title="Youtube Music" href="https://music.youtube.com/channel/UCRIKdurfay2wBPO3m6LCXlg" target="_blank"><img src="images/small-icon-ytmusic.png" alt="YouTube Music link"></a></li>
+				<li><a title="Spotify" href="https://open.spotify.com/artist/2OXJInebuDCVlsJfYycYX0" target="_blank"><img src="images/small-icon-spotify.png" alt="Spotify link"></a></li>
+				<li><a title="Apple Music" href="https://music.apple.com/us/artist/starbreak/1631427509" target="_blank"><img src="images/small-icon-applem.png" alt="Apple Music link"></a></li>
+				<li><a title="Discord Server" href="https://discord.gg/JX97pK6wH9" target="_blank"><img src="images/small-icon-discord.png" alt="Discord link"></a></li>
+				<li><a title="Twitter/X" href="https://twitter.com/StarbreakM" target="_blank"><img src="images/small-icon-twitter.png" alt="Twitter link"></a></li>
+				<li><a title="Ko-Fi" href="https://ko-fi.com/starbreakmusic" target="_blank"><img src="images/small-icon-kofi.png" alt="Ko-fi link"></a></li>
 			</ul>
 		</div>
 		<hr>
