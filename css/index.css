@@ -18,6 +18,10 @@
 }
 
 /* --Initial styling-- */
+html
+{
+    scroll-behavior: smooth;
+}
 body
 {
     background: #05013B;
@@ -26,10 +30,6 @@ body
 main
 {
     min-width: 900px;
-}
-html
-{
-    scroll-behavior: smooth;
 }
 
 /* --Makes all links color shift when hovered over-- */
@@ -433,7 +433,7 @@ p.light
     background-clip: border-box;
     border-top: 5px solid #0B0061;
     min-width: 200px;
-    max-width: 1000px;
+    max-width: 1100px;
 }
 #discord h2
 {
@@ -998,13 +998,12 @@ footer a
     height: auto;
 }
 
-
-@media screen and (min-width: 1000px) /* Default styles to apply if screen width is OVER 1000px */
+@media screen and (min-width: 1100px) /* Default styles to apply if screen width is OVER 1000px */
 {
     header
     {
         min-width: 1100px;
-        min-height: 200px;
+        min-height: 100px;
     }
     nav a
     {
